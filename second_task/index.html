@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<script src="js/jquery-3.3.1.js"></script> 
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/roboto" type="text/css"/>
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<title>Исполнительная документация</title>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<ul>
+				<li class="headerLi">
+					<span class="imgContainer">
+					<img style="position: relative; top:7px; left: 9px;" src="1.png">
+					<span class="marker1">1</span>
+					</span>
+					Информация по стыку
+					<span><hr id="firstLine" noshade="none" color="#368900" size="1px"></span>
+				</li>
+				<li id="weld" class="headerLi">
+					<span class="imgContainer">
+					<img style="position: relative; top:7px; left: 9px;" src="1.png">
+					<span class="marker1">2</span>
+					</span>
+					Материалы и сварщики
+					<span><hr id="secondLine" noshade="none" color="#777777" size="1px"></span>
+				</li>
+				<li id="list_3" class="headerLi">
+					<span class="imgContainer">
+					<img style="position: relative; top:7px; left: 9px;" src="2.png">
+					<span class="marker3">3</span>
+					</span>
+					Заключения лабораторий
+				</li>
+			</ul>
+		</header>
+		<div id="horizontal_blocks">
+				<div id="leftBlock">
+					<div class="selectContainer">
+						<p class="selectText">Номер линии</p>
+						<div class="lineSelectWrapper">
+							<select>
+								<option>Выбрать номер</option>
+								<option>212-41-23</option>
+								<option>262-512-123-5</option>
+								<option>21-2312-535-12</option>
+							</select>
+						</div>
+					</div>
+
+					<div id="radioTypes">
+						<div class="spliceRadioGroup">
+							<p class="spliceP">Тип стыка</p>
+							<ul class="radioList">
+								<li class="spliceLi"><label><input type="radio" name="name" value="S-цеховой"><i></i>S-цеховой</label></li>
+								<li class="spliceLi"><label><input type="radio" name="name" value="F-монтажный"><i></i>F-монтажный</label></li>
+								<li class="spliceLi"><label><input type="radio" name="name" value="PS-опоры"><i></i>PS-опоры</label></li>
+							</ul>
+						</div>
+						<div class="seamRadioGroup">
+							<p class="spliceP">Тип шва</p>
+							<ul class="radioList">
+								<li class="spliceLi"><label><input type="radio" name="name1" value="S-цеховой"><i></i>BW-угловой</label></li>
+								<li class="spliceLi"><label><input type="radio" name="name1" value="F-монтажный"><i></i>FW-стыковой</label></li>
+								<li class="spliceLi"><label><input type="radio" name="name1" value="PS-опоры"><i></i>LW-другое</label></li>
+							</ul>
+						</div>
+					</div>
+					<div class="doubleTextInput">
+
+							<div class="textInputContainerLeft">
+								<p>Номер стыка</p>
+								<input type="text" >
+							</div>
+
+
+
+							<div class="textInputContainerRight">
+								<p>Номер спула</p>
+								<input type="text">
+							</div>
+
+					</div>
+					<div class="posData" style="height: 110px;">
+						<div class="seamRadioGroup" style="width: 50%; margin-top: 20px;">
+							<p class="spliceP">Положение сварки</p>
+							<ul class="radioList">
+								<li class="spliceLi" style="width: 170px;"><label><input type="radio" name="name3" value="S-цеховой"><i></i>Горизонтальное</label></li>
+								<li class="spliceLi" style="width: 160px;"><label><input type="radio" name="name3" value="F-монтажный"><i></i>Вертикальное</label></li>
+							</ul>
+						</div>
+							<div class="textInputContainerRight" style="vertical-align: top; margin-top: 15px;">
+								<p id="textInput">Дата сварки</p>
+								<input type="text">
+							</div>
+					 </div>
+
+					<div class="selectContainer">
+						<p class="selectText">Технологическая карта</p>
+						<div class="lineSelectWrapper">
+							<select>
+								<option>Выбрать карту</option>
+								<option>212-41-23</option>
+								<option>262-512-123-5</option>
+								<option>21-2312-535-12</option>
+							</select>
+						</div>
+					</div>
+
+						<div id="rangeContainer">
+							<p class="rangeText">Температура подогрева</p>
+							<div class="signs">
+								<span id="leftSign">50</span>
+								<span id="rightSign">150</span>
+							</div>
+							<input type="range" min="50" max="150" step="1" value="50" name="" id="tempRange" width="290">
+						</div>
+						<div>						
+							<div  class="spliceLi" style="margin-top: 20px; display: inline-block;"><label style="margin:0">	<input type="checkbox" name="name" value="S-цеховой"><i id="check"></i>Корень</label>
+							</div>
+							<div id="textInputContainerLeft" style="float: right; margin-top: 20px; margin-right: 30px">
+								<input id="tempVal" style="width: 40px" type="text" value="">							
+								<div id="textInput" style="display: inline-block;">градусов</div>
+
+							</div>	
+
+						</div>
+
+					<div class="selectContainer" style="margin-top: 20px;">
+						<p class="selectText">Способ сварки</p>
+						<div class="lineSelectWrapper">
+							<select id="lineSelect">
+								<option>AADP</option>
+								<option>212-41-23</option>
+								<option>262-512-123-5</option>
+								<option>21-2312-535-12</option>
+							</select>
+						</div>
+					</div>
+
+
+
+							<div class="doubleSelect">
+
+								<div class="selectContainerLeft" style="float: left; margin-right: 0">
+										<p class="selectText">Элемент №1</p>
+										<div class="lineSelectWrapper1">
+											<select id="lineSelect">
+												<option>Труба</option>
+												<option>21dsd23</option>
+												<option>262-ss-123-5</option>
+												<option>21-231aa2-535-12</option>
+											</select>
+										</div>
+								</div>
+
+								<div class="selectContainerRight">
+									<p class="selectText">Ident №1</p>
+									<div class="lineSelectWrapper1">
+										<select id="lineSelect">
+											<option>H30678</option>
+											<option>21dsd23</option>
+											<option>262-ss-123-5</option>
+											<option>21-231aa2-535-12</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="doubleSelect">
+
+								<div class="selectContainerLeft" style="float: left; margin-right: 0">
+										<p class="selectText">Элемент №2</p>
+										<div class="lineSelectWrapper1">
+											<select id="lineSelect">
+												<option>Тройник</option>
+												<option>21dsd23</option>
+												<option>262-ss-123-5</option>
+												<option>21-231aa2-535-12</option>
+											</select>
+										</div>
+								</div>
+
+								<div class="selectContainerRight">
+									<p class="selectText">Ident №2</p>
+									<div class="lineSelectWrapper1">
+										<select id="lineSelect">
+											<option>H22323</option>
+											<option>21dsd23</option>
+											<option>262-ss-123-5</option>
+											<option>21-231aa2-535-12</option>
+										</select>
+									</div>
+								</div>
+							</div>							
+				</div>
+
+				<div id="centerBlock">
+
+						<div class="scrollSection">
+								<div class="boxArrayWrap material">
+									<div class="box">
+										<div class="hider"">
+											<div class="hideButtonWrap">
+												<button class="hideMaterialButton" type="button" name="">Новый элемент</button>
+											</div>
+											<div class="deleteWrap">
+												<button class="delete material" type="button" name="" value="Удалить">Удалить</button>
+											</div>
+										</div>
+										<div class="doubleSelect">
+											<div class="selectContainerLeft">
+												<p class="selectText">Материал</p>
+												<div class="lineSelectWrapper1">
+													<select name="materialSelect_0">
+														<option>Выбрать материал</option>
+														<option>21dsd23</option>
+														<option>262-ss-123-5</option>
+														<option>21-231aa2-535-12</option>
+													</select>
+												</div>
+											</div>
+											<div class="selectContainerRight">
+												<p class="selectText">Тип, марка</p>
+												<div class="lineSelectWrapper1">
+													<select name="typeSelect_">
+														<option>Выбрать тип</option>
+														<option>21dsd23</option>
+														<option>262-ss-123-5</option>
+														<option>21-231aa2-535-12</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="doubleSelect" style="bottom: 20px; left: 30px;">
+											<div class="selectContainerLeft">
+												<p class="selectText">Номер партии</p>
+												<div class="lineSelectWrapper1">
+													<select name="partNumber_0">
+														<option>Выбрать номер</option>
+														<option>21dsd23</option>
+														<option>262-ss-123-5</option>
+														<option>21-231aa2-535-12</option>
+													</select>
+												</div>
+											</div>
+											<div class="selectContainerRight">
+												<p class="selectText">Сертификат</p>
+												<div class="lineSelectWrapper1">
+													<select name="sertificate_0">
+														<option>Выбрать сертификат</option>
+														<option>21dsd23</option>
+														<option>262-ss-123-5</option>
+														<option>21-231aa2-535-12</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+										
+						</div>
+						<div class="addMaterialButtonWrap">
+							<label>
+								<img src="plus.png" style="display: inline-block;">
+								<button class="addButtonInput" type="button" name="" value="Добавить материал" onclick="addMaterial()">Добавить материал</button>
+							</label>
+						</div>
+
+
+						<button  id="weldFiller" type="button" name="" value="Заполнение по сварщикам" onclick="weldButtonHandle()">Заполнение по сварщикам</button>
+						<button id="layerFill" type="button" name="" value="Заполнение по слоям" onclick="layerButtonHandle()">Заполнение по слоям</button>
+
+						<div>
+							<div class="scrollSection2" style="margin-top: 10px">
+								<div class="boxArrayWrap weld">
+									<div class="box" style="height: 200px; margin-top: 20px">
+										<div class="hider"">
+											<div class="hideButtonWrap">
+												<button class="hideWeldButton" type="button" name="">Новый сварщик</button>
+											</div>
+											<div class="deleteWrap">
+												<button class="delete weld" type="button" name="" value="Удалить">Удалить</button>
+											</div>
+										</div>
+										<div>
+											<div class="selectContainerLeft" style="width: 35%; padding-left: 30px;">
+												<p class="selectText" style="font-size: 12px;">Клеймо сварщика №1</p>
+												<div class="lineSelectWrapper1">
+													<select name="weldMark_0">
+														<option>Выбрать клеймо</option>
+														<option>21dsd23</option>
+														<option>262-ss-123-5</option>
+														<option>21-231aa2-535-12</option>
+													</select>
+												</div>
+											</div>
+											<div class="seamLayer" style="width: 40%; float:right; padding-top: 5px;">
+												<p class="spliceP">Слой шва</p>
+												<ul name="radioList_0" class="radioList" style="width: 90%">
+													<li class="spliceLi">
+														<label>
+															<input type="checkbox" name="name">
+															<i id="check">
+																
+															</i>Корень
+														</label>
+													</li>
+														<li  class="spliceLi">
+															<label>
+																<input type="checkbox" name="name">
+																<i id="check">
+																	
+																</i>Заполнение
+															</label>
+														</li>
+														<li  class="spliceLi">
+															<label>
+																<input type="checkbox" name="name">
+																<i id="check">
+																		
+																</i>Облицовка
+															</label>
+														</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="scrollSectionHidden" style="margin-top: 10px">
+								<div class="boxArrayWrap layer">
+									<div class="box" style="height: 200px; margin-top: 20px">
+										<div class="hider"">
+											<div class="hideButtonWrap">
+												<button class="hideWeldButton" type="button" name="">Корень</button>
+											</div>
+
+										</div>
+
+										<div class="doubleSelect">
+											<div class="selectContainerLeft">
+												<p class="selectText">Материал</p>
+												<div class="lineSelectWrapper1">
+													<select name="materialSelect_0">
+														<option>Выбрать материал</option>
+														<option>21dsd23</option>
+														<option>262-ss-123-5</option>
+														<option>21-231aa2-535-12</option>
+													</select>
+												</div>
+											</div>
+											<div class="selectContainerRight">
+												<p class="selectText">Тип, марка</p>
+												<div class="lineSelectWrapper1">
+													<select name="typeSelect_">
+														<option>Выбрать тип</option>
+														<option>21dsd23</option>
+														<option>262-ss-123-5</option>
+														<option>21-231aa2-535-12</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="doubleSelect" style="bottom: 20px; left: 30px;">
+											<div class="selectContainerLeft">
+												<p class="selectText">Номер партии</p>
+												<div class="lineSelectWrapper1">
+													<select name="partNumber_0">
+														<option>Выбрать номер</option>
+														<option>21dsd23</option>
+														<option>262-ss-123-5</option>
+														<option>21-231aa2-535-12</option>
+													</select>
+												</div>
+											</div>
+											<div class="selectContainerRight">
+												<p class="selectText">Сертификат</p>
+												<div class="lineSelectWrapper1">
+													<select name="sertificate_0">
+														<option>Выбрать сертификат</option>
+														<option>21dsd23</option>
+														<option>262-ss-123-5</option>
+														<option>21-231aa2-535-12</option>
+													</select>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+							<div class="addWeldButtonWrap">
+								<label>
+									<img src="plus.png" style="margin: 5px 0 0 0">
+									<button class="addButtonInput" type="button" name="" value="Добавить материал" onclick="addWeld()">Добавить сварщика</button>
+								</label>
+							</div>
+				</div>
+
+				<div id="rightBlock">
+					<div class="scrollSection3">
+						<div class="boxArrayWrap">
+							<div class="box" style="height: 400px">
+
+								<div class="hider"">
+									<div class="hideButtonWrap">
+										<button class="hideResultButton" type="button" name="">Сварщик 2NAM</button> 
+									</div>
+									<div class="deleteWrap">
+										<button class="delete result" type="button" name="" value="Удалить">Удалить</button>
+									</div>
+
+								</div>
+
+								<div class="doubleSelect">
+
+									<div class="selectContainerLeft">
+											<p class="selectText">Заключение</p>
+											<div class="lineSelectWrapper1">
+												<select name="resultSelector_0">
+													<option>Выбрать заключение</option>
+													<option>21dsd23</option>
+													<option>262-ss-123-5</option>
+													<option>21-231aa2-535-12</option>
+												</select>
+											</div>
+									</div>
+
+									<div class="selectContainerRight">
+										<p class="selectText">Лаборатория</p>
+										<div class="lineSelectWrapper1">
+											<select name="labSelector_0">
+												<option>Выбрать лабораторию</option>
+												<option>21dsd23</option>
+												<option>262-ss-123-5</option>
+												<option>21-231aa2-535-12</option>
+											</select>
+										</div>
+									</div>
+								</div>	
+
+								<div class="doubleSelect">
+
+									<div class="selectContainerLeft">
+											<p class="selectText">№ Заключения</p>
+											<div class="lineSelectWrapper1">
+												<select name="resultNumberSelector_">
+													<option>Выбрать номер</option>
+													<option>21dsd23</option>
+													<option>262-ss-123-5</option>
+													<option>21-231aa2-535-12</option>
+												</select>
+											</div>
+									</div>
+
+									<div class="selectContainerRight">
+										<p class="selectText">№ Заявки</p>
+										<div class="lineSelectWrapper1">
+											<select name="bidNumberSelector_0">
+												<option>Выбрать номер</option>
+												<option>21dsd23</option>
+												<option>262-ss-123-5</option>
+												<option>21-231aa2-535-12</option>
+											</select>
+										</div>
+									</div>
+								</div>													
+
+	
+
+
+
+
+								<div>
+
+									<div class="seamRadioGroup" style="margin-left: 30px;">
+										<p class="spliceP">Результат экспертизы</p>
+										<ul class="radioList" name="expResult_0">
+											<li class="spliceLi"><label><input type="radio" name="name2" value="S-цеховой"><i></i>Годен</label></li>
+											<li class="spliceLi"><label><input type="radio" name="name2" value="F-монтажный"><i></i>Ремонт</label></li>
+											<li class="spliceLi"><label><input type="radio" name="name2" value="PS-опоры"><i></i>Вырезать</label></li>
+											<li class="spliceLi"><label><input type="radio" name="name2" value="PS-опоры"><i></i>Не годен</label></li>
+										</ul>
+									</div>	
+
+									<div class="textInputContainerRight" style="vertical-align: top; margin-left: 35px;">
+										<p id="textInput">Дата заключения</p>
+										<input name="resultDate_0" type="text">
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+						<div class="addResultButtonWrap">
+							<label>
+								<img src="plus.png" style="margin: 5px 0 0 0">
+								<button class="addButtonInput" type="button" name="" value="Добавить материал" onclick="addResult()">Добавить заключение</button>
+							</label>
+						</div>
+
+						<div>
+							<input type="button" name="" id="finalButton" value="Добавить/изменить стык">
+						</div>
+				</div>
+		</div>
+	</div>
+</body>
+
+
+
+<script>
+	$('.scrollSectionHidden').hide();
+	var materialArr = $('.boxArrayWrap.material').find('.box');
+	var materialBoxCounter = 0;
+	var weldArr = $('.boxArrayWrap.weld').find('.box');
+	var weldBoxCounter = 0;
+	var resultArr = $('.boxArrayWrap.result');
+	var resultBoxCounter = 0;
+
+	var materialTemplate = '<div class="box open"><div class="hider""><div class="hideButtonWrap"><button class="hideMaterialButton" type="button" name="">Новый элемент</button></div><div class="deleteWrap"><button class="delete material" type="button" name="" value="Удалить">Удалить</button></div></div><div class="doubleSelect"><div class="selectContainerLeft"><p class="selectText">Материал</p><div class="lineSelectWrapper1"><select name="materialSelect_"><option>Выбрать материал</option><option>21dsd23</option><option>262-ss-123-5</option><option>21-231aa2-535-12</option></select></div></div><div class="selectContainerRight"><p class="selectText">Тип, марка</p><div class="lineSelectWrapper1"><select name="typeSelect_"><option>Выбрать тип</option><option>21dsd23</option><option>262-ss-123-5</option><option>21-231aa2-535-12</option></select></div></div></div><div class="doubleSelect" style="bottom: 20px; left: 30px;"><div class="selectContainerLeft"><p class="selectText">Номер партии</p><div class="lineSelectWrapper1"><select name="partNumber_"><option>Выбрать номер</option><option>21dsd23</option><option>262-ss-123-5</option><option>21-231aa2-535-12</option></select></div></div><div class="selectContainerRight"><p class="selectText">Сертификат</p><div class="lineSelectWrapper1"><select name="sertificate_"><option>Выбрать сертификат</option><option>21dsd23</option><option>262-ss-123-5</option><option>21-231aa2-535-12</option></select></div></div></div></div>';
+
+
+	var weldTemplate = '<div class="box" style="height: 200px; margin-top: 20px">							<div class="hider""><div class="hideButtonWrap"><button class="hideWeldButton" type="button" name="">Новый сварщик</button> </div><div class="deleteWrap"><button class="delete" type="button" name="" value="Удалить">Удалить</button></div></div><div><div class="selectContainerLeft" style="width: 35%; padding-left: 30px;"><p class="selectText" style="font-size: 12px;">Клеймо сварщика №1</p><div class="lineSelectWrapper1"><select name="weldMark_"><option>Выбрать клеймо</option><option>21dsd23</option><option>262-ss-123-5</option><option>21-231aa2-535-12</option></select></div></div><div class="seamLayer" style="width: 40%; float:right; padding-top: 5px;"><p class="spliceP">Слой шва</p><ul name="radioList_" class="radioList" style="width: 90%"><li class="spliceLi"><label><input type="checkbox" name="name"><i id="check"></i>Корень</label></li><li  class="spliceLi"><label><input type="checkbox" name="name"><i id="check"></i>Заполнение</label></li><li  class="spliceLi"><label><input type="checkbox" name="name"><i id="check"></i>Облицовка</label></li></ul></div></div></div>';
+
+
+	var resultTemplate = '<div class="box" style="height: 400px"><div class="hider""><div class="hideButtonWrap"><button class="hideResultButton" type="button" name="">Сварщик 2NAM</button> </div><div class="deleteWrap"><button class="delete result" type="button" name="" value="Удалить">Удалить</button></div></div><div class="doubleSelect"><div class="selectContainerLeft"><p class="selectText">Заключение</p><div class="lineSelectWrapper1"><select name="resultSelector_"><option>Выбрать заключение</option><option>21dsd23</option><option>262-ss-123-5</option><option>21-231aa2-535-12</option></select></div></div><div class="selectContainerRight"><p class="selectText">Лаборатория</p><div class="lineSelectWrapper1"><select name="labSelector_"><option>Выбрать лабораторию</option><option>21dsd23</option><option>262-ss-123-5</option><option>21-231aa2-535-12</option></select></div></div></div><div class="doubleSelect"><div class="selectContainerLeft"><p class="selectText">№ Заключения</p><div class="lineSelectWrapper1"><select name="resultNumberSelector_"><option>Выбрать номер</option><option>21dsd23</option><option>262-ss-123-5</option><option>21-231aa2-535-12</option></select></div></div><div class="selectContainerRight"><p class="selectText">№ Заявки</p><div class="lineSelectWrapper1"><select name="bidNumberSelector_"><option>Выбрать номер</option><option>21dsd23</option><option>262-ss-123-5</option><option>21-231aa2-535-12</option></select></div></div></div><div><div class="seamRadioGroup" style="margin-left: 30px;"><p class="spliceP">Результат экспертизы</p><ul class="radioList" name="expResult_"><li class="spliceLi"><label><input type="radio" name="name2" value="S-цеховой"><i></i>Годен</label></li><li class="spliceLi"><label><input type="radio" name="name2" value="F-монтажный"><i></i>Ремонт</label></li><li class="spliceLi"><label><input type="radio" name="name2" value="PS-опоры"><i></i>Вырезать</label></li><li class="spliceLi"><label><input type="radio" name="name2" value="PS-опоры"><i></i>Не годен</label></li></ul></div>									<div class="textInputContainerRight" style="vertical-align: top; margin-left: 35px;"><p id="textInput">Дата заключения</p><input name="resultDate_" type="text"></div>';
+
+	var RIGHT_BLOCK_HEIGHT = '400px';
+
+	var layerButtonHandle = function()
+	{
+		document.getElementById('layerFill').style.color ='black';
+		document.getElementById('layerFill').style.border = 'none';
+		document.getElementById('layerFill').style.fontWeight = 'bold';
+
+		document.getElementById('weldFiller').style.color='#c0c0c0';
+		document.getElementById('weldFiller').style.borderBottom = '1px solid #c0c0c0';
+
+		$('.scrollSection2').hide('slow');
+		$('.scrollSectionHidden').show('slow');
+	}
+
+	var weldButtonHandle = function()
+	{
+		document.getElementById('weldFiller').style.color ='black';
+		document.getElementById('weldFiller').style.border = 'none';
+		document.getElementById('weldFiller').style.fontWeight = 'bold';
+		document.getElementById('layerFill').style.color='#c0c0c0';
+		document.getElementById('layerFill').style.borderBottom = '1px solid #c0c0c0';
+
+		$('.scrollSectionHidden').hide('slow');
+		$('.scrollSection2').show('slow');
+	}
+
+
+
+	var hideMaterial = function()
+	{
+		var boxToHide = $(this).closest('.box');
+		var doubleSelect = $(boxToHide).find('.doubleSelect');
+
+
+
+		if ($(boxToHide).height() == 225)
+		{
+			$(boxToHide).attr('class', 'box');
+			$.each(doubleSelect, function(index, element){
+				$(element).hide('slow');
+			})
+			$(boxToHide).animate({height: '60px'}, 500);
+		}
+		else
+		{
+			// var boxContainer = $(boxToHide).closest('.boxArrayWrap');
+			// var openBox = $(boxContainer).find('.box.open');
+			// var tmpDoubleSelect = $(openBox).find('.doubleSelect');
+			// $.each(tmpDoubleSelect, function(i, elem){
+			// 	$(elem).hide('slow');
+			// })
+
+			// $(openBox).animate({height: '60px'});
+
+			$(boxToHide).attr('class', 'box open');
+			$.each(doubleSelect, function(index, element){
+				$(element).show('slow');
+			})
+			$(boxToHide).animate({height: '225px'}, 500);
+
+		}
+	}
+
+	var hideWeld = function()
+	{
+		var boxToHide = $(this).closest('.box');
+		var selectContainerLeft = $(boxToHide).find('.selectContainerLeft');
+		var seamLayer = $(boxToHide).find('.seamLayer');
+		if($(boxToHide).height() == 200)
+		{
+			$(selectContainerLeft).hide('slow');
+			$(seamLayer).hide('slow');
+			$(boxToHide).animate({height: '60px'}, 500);
+		}
+		else
+		{
+			$(selectContainerLeft).slideToggle();
+			$(seamLayer).slideToggle();
+			$(boxToHide).animate({height: '200px'}, 500);
+		}
+	}
+
+	var hideResult = function()
+	{
+		var boxToHide = $(this).closest('.box');
+		var doubleSelect = $(boxToHide).find('.doubleSelect');
+		var textInputContainerRight = $(boxToHide).find('.textInputContainerRight');
+		var seamRadioGroup = $(boxToHide).find('.seamRadioGroup');
+		var seamLayer = $(boxToHide).find('.seamLayer');
+		if ($(boxToHide).height() == 400)
+		{
+			$.each(doubleSelect, function(index, element){
+				$(element).hide('slow');
+			})			
+			$(textInputContainerRight).hide('slow');
+			$(seamLayer).hide('slow');
+			$(seamRadioGroup).hide('slow');
+			$(boxToHide).animate({height: '60px'}, 500);
+		}
+		else
+		{
+			$.each(doubleSelect, function(index, element){
+				$(element).show('slow');
+			})			
+			$(textInputContainerRight).show('slow');
+			$(seamLayer).show('slow');
+			$(seamRadioGroup).show('slow');			
+			$(boxToHide).animate({height: '400px'}, 500);
+		}
+	}
+
+	$("body").on("click", '.hideMaterialButton', hideMaterial);
+	$("body").on("click", '.hideWeldButton', hideWeld);
+	$("body").on("click", '.hideResultButton', hideResult);
+
+
+
+		var addMaterial = function()
+		{
+			var scrollSection = $('.addMaterialButtonWrap').prev();
+			var insertPlace = $(scrollSection).find('.boxArrayWrap').eq(0);
+			$(insertPlace).prepend(materialTemplate);
+			materialArr = $(insertPlace).find('.box');			
+			materialBoxCounter++;
+			var newBox = $(insertPlace).find('.box').eq(0);
+
+			$(newBox).find('[name=materialSelect_]').attr('name', 'materialSelect_' + materialBoxCounter);
+			$(newBox).find('[name=typeSelect_]').attr('name', 'materialSelect_' + materialBoxCounter);
+			$(newBox).find('[name=partNumber_]').attr('name', 'partNumber_' + materialBoxCounter);
+			$(newBox).find('[name=sertificate_]').attr('name', 'sertificate_' + materialBoxCounter);
+
+
+
+			if (materialArr.length != 0)
+			{
+				$.each(materialArr, function(index, element){
+					if(index == 0)
+						return;
+					$(element).animate({height: '60px'}, 500);
+					$(element).attr('class', 'box')
+					var doubleSelect = $(element).find('.doubleSelect');
+					$.each(doubleSelect, function(i, dS){
+						$(doubleSelect).hide('slow');
+					});
+				});
+			}
+
+		}
+
+		var addWeld = function()
+		{
+			var scrollSection = $('.addWeldButtonWrap').prev();
+			var insertPlace = $(scrollSection).find('.boxArrayWrap').eq(0);
+			$(insertPlace).prepend(weldTemplate);			
+			weldArr = $(insertPlace).find('.box');	
+			weldBoxCounter++;
+			var newBox = $(insertPlace).find('.box').eq(0);
+
+			$(newBox).find('[name=weldMark_]').attr('name', 'weldMark_' + weldBoxCounter);
+			$(newBox).find('[name=radioList_]').attr('name', 'radioList_' + weldBoxCounter);
+
+
+
+
+			if(weldArr.length !=0)
+			{
+				$.each(weldArr, function(index, element){
+					if(index == 0)
+						return;
+					$(element).animate({height: '60px'}, 500);
+					$(element).attr('class', 'box');
+					$(element).find('.selectContainerLeft').hide('slow');
+					$(element).find('.seamLayer').hide('slow');						
+				})
+			}
+
+		}
+
+		var addResult = function()
+		{
+			var scrollSection = $('.addResultButtonWrap').prev();
+			var insertPlace = $(scrollSection).find('.boxArrayWrap').eq(0);
+			console.log(resultArr.length);
+			$(insertPlace).prepend(resultTemplate);	
+			resultArr = $(insertPlace).find('.box');
+			resultBoxCounter++;
+			var newBox = $(insertPlace).find('.box').eq(0);
+
+			$(newBox).find('[name=resultSelector_]').attr('name', 'resultSelector_' + resultBoxCounter);
+			$(newBox).find('[name=labSelector_]').attr('name', 'labSelector_' + resultBoxCounter);
+			$(newBox).find('[name=resultNumberSelector_]').attr('name', 'resultNumberSelector_' + resultBoxCounter);
+			$(newBox).find('[name=bidNumberSelector_]').attr('name', 'bidNumberSelector_' + resultBoxCounter);
+			$(newBox).find('[name=expResult_]').attr('name', 'expResult_' + resultBoxCounter);
+			$(newBox).find('[name=resultDate_]').attr('name', 'resultDate_' + resultBoxCounter);
+
+			if(resultArr.length !=0)
+			{
+				$.each(resultArr, function(index, element){
+					if(index == 0)
+						return;
+					$(element).animate({height: '60px'}, 500 );
+					$(element).attr('class', 'box');
+					var doubleSelect = $(element).find('.doubleSelect');
+					$.each(doubleSelect, function(i, elem){
+						$(elem).hide('slow');
+					});
+
+					$(element).find('.seamRadioGroup').hide('slow');
+					$(element).find('.textInputContainerRight').hide('slow');
+				})
+			}
+
+		}		
+
+
+
+		var deleteBox = function()
+		{
+			var boxToDelete = $(this).closest('.box');
+			var buttonClass = $(this).attr('class');			
+			var boxWrap = $(this).closest('.boxArrayWrap');
+			boxToDelete.remove();
+			console.log(materialArr);
+			switch(buttonClass){
+				case 'delete material':
+					materialArr = $(boxWrap).find('.box');
+					materialBoxCounter--;
+					var tmp = ($(Array.from(materialArr).reverse()));
+					$.each(tmp, function(index, element){
+						console.log($(element).find('[name^=materialSelect_]'));
+						$(element).find('[name^=materialSelect_]').attr('name', 'materialSelect_' + index);
+						$(element).find('[name^=typeSelect_]').attr('name', 'materialSelect_' + index);
+						$(element).find('[name^=partNumber_]').attr('name', 'partNumber_' + index);
+						$(element).find('[name^=sertificate_]').attr('name', 'sertificate_' + index);						
+					})
+
+					break;
+				case 'delete weld':
+					weldArr = $(boxWrap).find('.box');
+					weldBoxCounter--;
+					var tmp = ($(Array.from(weldArr).reverse()));
+					$.each(tmp, function(index, element){
+						$(element).find('[name^=weldMark_]').attr('name', 'weldMark_' + index);
+						$(element).find('[name^=radioList_]').attr('name', 'radioList_' + index);
+					})
+					console.log('weld deleted');
+					break;
+				case 'delete result':
+					resultArr = $(boxWrap).find('.box');
+					resultBoxCounter--;
+					var tmp = ($(Array.from(resultArr).reverse()));
+					$.each(tmp, function(index, element){
+						$(element).find('[name^=resultSelector_]').attr('name', 'resultSelector_' + index);
+						$(element).find('[name^=labSelector_]').attr('name', 'labSelector_' + index);
+						$(element).find('[name^=resultNumberSelector_]').attr('name', 'resultNumberSelector_' + index);
+						$(element).find('[name^=bidNumberSelector_]').attr('name', 'bidNumberSelector_' + index);
+						$(element).find('[name^=expResult_]').attr('name', 'expResult_' + index);
+						$(element).find('[name^=resultDate_]').attr('name', 'resultDate_' + index);
+					})
+					console.log('result deleted');
+					break;			
+			}
+		}
+
+
+		$("body").on("click", '.delete', deleteBox);
+
+		$("body").on('input','#tempRange', function(){
+			$("#tempVal").val($(this).val());
+		});
+
+		$("body").on("blur", '#tempVal', function(){
+			if($(this).val() < 50)
+			{
+				$('#tempRange').val('50');
+				$(this).val('50');
+			}
+
+			else if($(this).val() > 150)
+			{
+				$('#tempRange').val('150');
+				$(this).val('150');				
+			}
+
+			$('#tempRange').val($(this).val());
+		})
+
+</script>
+
+</html>
